@@ -1,0 +1,56 @@
+:root {
+  --bg-main: #0b1220;
+  --bg-section: #111827;
+  --card-bg: rgba(255, 255, 255, 0.05);
+
+  --text-main: #ffffff;
+  --text-soft: #94a3b8;
+
+  --primary: #38bdf8;
+  --secondary: #6366f1;
+
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glow Background */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+body::before {
+  top: -120px;
+  left: -120px;
+  background: var(--primary);
+}
+
+body::after {
+  bottom: -150px;
+  right: -150px;
+  background: var(--secondary);
+}
+:root {
+  --primary: #f97316;
+  --secondary: #ec4899;
+}
