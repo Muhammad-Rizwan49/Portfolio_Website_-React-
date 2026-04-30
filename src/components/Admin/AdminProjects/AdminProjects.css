@@ -1,0 +1,211 @@
+.admin-projects {
+  min-height: 100vh;
+  padding: 40px;
+  background: #0f172a;
+  color: white;
+}
+
+.admin-projects h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+/* FORM */
+.project-form {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 18px;
+  display: grid;
+  gap: 15px;
+  margin-bottom: 35px;
+  border: 1px solid #334155;
+}
+
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+}
+
+.project-form input:focus,
+.project-form textarea:focus {
+  border-color: #38bdf8;
+}
+
+.project-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* TECH */
+.tech-row {
+  display: flex;
+  gap: 10px;
+}
+
+.tech-row input {
+  flex: 1;
+}
+
+.tech-row button {
+  background: #38bdf8;
+  border: none;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 90px;
+}
+
+.tech-row button:hover {
+  background: #0ea5e9;
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags span {
+  background: #38bdf8;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.tags button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* FILE INPUT */
+.project-form input[type="file"] {
+  padding: 10px;
+}
+
+/* IMAGE PREVIEW */
+.preview-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.img-box {
+  position: relative;
+}
+
+.img-box img {
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+
+.img-box button {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* SUBMIT */
+.project-form button[type="submit"] {
+  background: #38bdf8;
+  border: none;
+  color: white;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.project-form button[type="submit"]:hover {
+  background: #0ea5e9;
+}
+
+/* PROJECT LIST */
+.projects-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px solid #334155;
+}
+
+.project-card h3 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.project-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.project-card small {
+  display: block;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+/* DELETE */
+.delete-btn {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .admin-projects {
+    padding: 20px;
+  }
+
+  .tech-row {
+    flex-direction: column;
+  }
+
+  .tech-row button {
+    width: 100%;
+  }
+
+  .img-box img {
+    width: 80px;
+    height: 80px;
+  }
+}

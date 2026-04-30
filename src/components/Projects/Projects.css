@@ -21,14 +21,12 @@
   color: #38bdf8;
 }
 
-/* GRID */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
 }
 
-/* CARD */
 .project-card {
   background: #1e293b;
   padding: 25px;
@@ -61,10 +59,10 @@
   margin-bottom: 15px;
 }
 
-/* LINKS */
 .project-links {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .project-links a {

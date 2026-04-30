@@ -1,0 +1,72 @@
+.admin-about {
+  min-height: 100vh;
+  background: #0f172a;
+  padding: 40px;
+  color: white;
+}
+
+.admin-about h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #38bdf8;
+}
+
+.about-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.about-form input,
+.about-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background: #1e293b;
+  color: white;
+  font-size: 15px;
+}
+
+.about-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.about-form textarea[name="description"] {
+  grid-column: span 2;
+}
+
+.about-form button {
+  grid-column: span 2;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.about-form button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .admin-about {
+    padding: 20px;
+  }
+
+  .about-form {
+    grid-template-columns: 1fr;
+  }
+
+  .about-form textarea[name="description"],
+  .about-form button {
+    grid-column: span 1;
+  }
+}

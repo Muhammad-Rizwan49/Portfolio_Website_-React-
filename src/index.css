@@ -50,7 +50,3 @@ body::after {
   right: -150px;
   background: var(--secondary);
 }
-:root {
-  --primary: #f97316;
-  --secondary: #ec4899;
-}

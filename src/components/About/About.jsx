@@ -1,7 +1,26 @@
 import "./About.css";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function About() {
+  const [about, setAbout] = useState(null);
+
+  useEffect(() => {
+    fetchAbout();
+  }, []);
+
+  const fetchAbout = async () => {
+    try {
+      const res = await axios.get("http://127.0.0.1:5000/about");
+      setAbout(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  if (!about) return null;
+
   return (
     <motion.section
       className="about"
@@ -14,47 +33,44 @@ function About() {
       <p className="section-title">About Me</p>
 
       <h2>
-        Creating Digital Solutions With <span>Purpose</span>
+        {about.title} <span>{about.highlight_word}</span>
       </h2>
 
       <p className="about-text">
-        I'm Muhammad Rizwan, a dedicated Software Engineer with 4+ years of
-        experience building Flutter mobile apps, modern websites, and clean UI/UX
-        experiences. I focus on creating products that are fast, scalable, and
-        visually impressive.
+        {about.description}
       </p>
 
       <div className="about-stats">
         <div>
-          <h3>4+</h3>
-          <p>Years Experience</p>
+          <h3>{about.exp_years}</h3>
+          <p>{about.exp_text}</p>
         </div>
 
         <div>
-          <h3>20+</h3>
-          <p>Projects Completed</p>
+          <h3>{about.projects_done}</h3>
+          <p>{about.projects_text}</p>
         </div>
 
         <div>
-          <h3>100%</h3>
-          <p>Client Focused</p>
+          <h3>{about.focus_percent}</h3>
+          <p>{about.focus_text}</p>
         </div>
       </div>
 
       <div className="about-cards">
         <div className="about-card">
-          <h3>Flutter Apps</h3>
-          <p>Cross-platform Android & iOS apps with premium UI.</p>
+          <h3>{about.card1_title}</h3>
+          <p>{about.card1_desc}</p>
         </div>
 
         <div className="about-card">
-          <h3>Web Development</h3>
-          <p>Responsive business websites and web solutions.</p>
+          <h3>{about.card2_title}</h3>
+          <p>{about.card2_desc}</p>
         </div>
 
         <div className="about-card">
-          <h3>UI / UX Design</h3>
-          <p>Modern user interfaces designed in Figma.</p>
+          <h3>{about.card3_title}</h3>
+          <p>{about.card3_desc}</p>
         </div>
       </div>
     </motion.section>

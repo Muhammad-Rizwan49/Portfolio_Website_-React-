@@ -1,15 +1,21 @@
 import "./Skills.css";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Skills() {
-  const skills = [
-    { name: "Flutter", level: 90 },
-    { name: "Dart", level: 85 },
-    { name: "React", level: 80 },
-    { name: "JavaScript", level: 85 },
-    { name: "Firebase", level: 75 },
-    { name: "UI/UX (Figma)", level: 80 },
-  ];
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:5000/skills")
+      .then((response) => {
+        setSkills(response.data);
+      })
+      .catch((error) => {
+        console.log("Error fetching skills:", error);
+      });
+  }, []);
 
   return (
     <section className="skills" id="skills">
@@ -23,7 +29,7 @@ function Skills() {
         {skills.map((skill, index) => (
           <motion.div
             className="skill-box"
-            key={index}
+            key={skill.id}
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}

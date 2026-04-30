@@ -1,5 +1,6 @@
 import "./Hero.css";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 function Hero() {
   return (
@@ -16,13 +17,24 @@ function Hero() {
           Hi, I'm <span>Muhammad Rizwan</span>
         </h1>
 
-        <h2>
-          Software Engineer | Flutter Developer | UI/UX Designer
+        <h2 className="typing-text">
+          <Typewriter
+            words={[
+              "Flutter Developer",
+              "UI/UX Designer",
+              "Software Engineer",
+            ]}
+            loop={true}
+            cursor
+            cursorStyle="|"
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1200}
+          />
         </h2>
 
         <p className="hero-desc">
-          I build premium mobile apps, modern websites, and clean user
-          experiences that help businesses grow faster.
+          I build modern mobile apps and websites that are fast, clean, and user-focused.
         </p>
 
         <div className="hero-buttons">
@@ -42,11 +54,7 @@ function Hero() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <img
-          src="/profile.png"
-          alt="Muhammad Rizwan"
-          className="profile-img"
-        />
+        <img src="/profile.png" alt="profile" className="profile-img" />
       </motion.div>
     </section>
   );

@@ -1,0 +1,58 @@
+.admin-messages {
+  min-height: 100vh;
+  background: #0f172a;
+  padding: 40px;
+  color: white;
+}
+
+.admin-messages h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #38bdf8;
+}
+
+.messages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.message-card {
+  background: #1e293b;
+  padding: 24px;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+.message-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.message-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.message-card .email {
+  color: #38bdf8;
+  margin-bottom: 14px;
+  word-break: break-word;
+}
+
+.message-card .message {
+  color: #cbd5e1;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .admin-messages {
+    padding: 20px;
+  }
+
+  .admin-messages h1 {
+    font-size: 26px;
+  }
+}
