@@ -9,7 +9,7 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
 import AdminLogin from "./components/Admin/AdminLogin/AdminLogin";
-import AdminDashboard from "./components/Admin/AdminDashboard/AdminDashboard";
+import AdminDashboard from "./components/Admin/AdminDashboard/Admindashboard";
 import AdminSkills from "./components/Admin/AdminSkills/AdminSkills";
 import AdminProjects from "./components/Admin/AdminProjects/AdminProjects";
 import AdminAbout from "./components/Admin/AdminAbout/AdminAbout";
