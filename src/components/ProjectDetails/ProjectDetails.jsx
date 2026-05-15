@@ -9,7 +9,7 @@ function ProjectDetails() {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const BASE_URL = import.meta.env.VITE_API_URL;
+  const BASE_URL = "https://muhammadrizwan.pythonanywhere.com";
 
   useEffect(() => {
     fetchProject();
@@ -61,8 +61,6 @@ function ProjectDetails() {
         .map((item) => item.trim())
         .filter((item) => item !== "")
     : [];
-
-  console.log(images);
 
   return (
     <section className="project-details">
@@ -117,11 +115,7 @@ function ProjectDetails() {
             {images.map((img, index) => (
               <img
                 key={index}
-                src={
-                  img.startsWith("http")
-                    ? img
-                    : `${BASE_URL}/uploads/${img.replace("uploads/", "")}`
-                }
+                src={`${BASE_URL}/uploads/${img}`}
                 alt="project"
               />
             ))}
