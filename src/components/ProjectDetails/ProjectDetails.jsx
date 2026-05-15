@@ -115,7 +115,11 @@ function ProjectDetails() {
             {images.map((img, index) => (
               <img
                 key={index}
-                src={`${BASE_URL}/uploads/${img}`}
+                src={
+                  img.startsWith("http")
+                    ? img
+                    : `${BASE_URL}/uploads/${img.replace("uploads/", "")}`
+                }
                 alt="project"
               />
             ))}
