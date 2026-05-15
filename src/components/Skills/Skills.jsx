@@ -8,7 +8,7 @@ function Skills() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:5000/skills")
+      .get(`${import.meta.env.VITE_API_URL}/skills`)
       .then((response) => {
         setSkills(response.data);
       })

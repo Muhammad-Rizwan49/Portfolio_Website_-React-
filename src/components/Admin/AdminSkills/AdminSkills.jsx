@@ -25,7 +25,10 @@ function AdminSkills() {
 
   const fetchSkills = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:5000/skills");
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/skills`
+      );
+
       setSkills(res.data);
     } catch (error) {
       console.log(error);
@@ -54,7 +57,7 @@ function AdminSkills() {
 
     try {
       await axios.post(
-        "http://127.0.0.1:5000/skills",
+        `${import.meta.env.VITE_API_URL}/skills`,
         form,
         {
           headers: {
@@ -73,7 +76,7 @@ function AdminSkills() {
   const deleteSkill = async (id) => {
     try {
       await axios.delete(
-        `http://127.0.0.1:5000/skills/${id}`,
+        `${import.meta.env.VITE_API_URL}/skills/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

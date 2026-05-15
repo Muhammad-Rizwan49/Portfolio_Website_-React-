@@ -29,7 +29,7 @@ function AdminLogin() {
 
     try {
       const res = await axios.post(
-        "http://127.0.0.1:5000/login",
+        `${import.meta.env.VITE_API_URL}/login`,
         form
       );
 

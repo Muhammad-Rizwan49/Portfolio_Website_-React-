@@ -30,7 +30,7 @@ function Contact() {
   const fetchProfile = async () => {
     try {
       const res = await axios.get(
-        "http://127.0.0.1:5000/admin-profile"
+        `${import.meta.env.VITE_API_URL}/admin-profile`
       );
 
       setProfile({
@@ -57,7 +57,7 @@ function Contact() {
 
     try {
       await axios.post(
-        "http://127.0.0.1:5000/contact",
+        `${import.meta.env.VITE_API_URL}/contact`,
         form
       );
 

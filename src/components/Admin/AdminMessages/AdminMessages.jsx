@@ -30,7 +30,7 @@ function AdminMessages() {
 
     try {
       const res = await axios.get(
-        "http://127.0.0.1:5000/contact",
+        `${import.meta.env.VITE_API_URL}/contact`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ function AdminMessages() {
 
     try {
       await axios.delete(
-        `http://127.0.0.1:5000/contact/${id}`,
+        `${import.meta.env.VITE_API_URL}/contact/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -36,7 +36,9 @@ function AdminAbout() {
 
   const fetchAbout = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:5000/about");
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/about`
+      );
 
       if (res.data) {
         setForm((prev) => ({
@@ -68,7 +70,7 @@ function AdminAbout() {
 
     try {
       await axios.post(
-        "http://127.0.0.1:5000/about",
+        `${import.meta.env.VITE_API_URL}/about`,
         form,
         {
           headers: {
