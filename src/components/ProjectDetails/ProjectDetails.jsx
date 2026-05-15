@@ -62,6 +62,8 @@ function ProjectDetails() {
         .filter((item) => item !== "")
     : [];
 
+  console.log(images);
+
   return (
     <section className="project-details">
       <p className="section-title">
@@ -132,13 +134,11 @@ function ProjectDetails() {
           <h2>Features</h2>
 
           <ul className="features">
-            {features.map(
-              (item, index) => (
-                <li key={index}>
-                  {item}
-                </li>
-              )
-            )}
+            {features.map((item, index) => (
+              <li key={index}>
+                {item}
+              </li>
+            ))}
           </ul>
         </>
       )}
